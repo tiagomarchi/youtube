@@ -334,6 +334,23 @@
     </svg>
 
   </div>
+  <div fxLayout="row" fxLayoutAlign="start start">
+    <mat-form-field fxFlex="100" appearance="fill">
+        <input matInput placeholder="pesquise um titulo" [matAutocomplete]="youtube"
+          formControlName='search'>
+      </mat-form-field>
+      <mat-autocomplete #youtube="matAutocomplete" [displayWith]="displayCustomerFn">
+        <mat-option *ngIf="isLoading" class="is-loading">
+          <mat-spinner diameter="20"></mat-spinner>
+        </mat-option>
+        <ng-container *ngIf="!isLoading">
+          <mat-option *ngFor="let customer of customers" [value]="customer">
+            <span>{{ customer.name }}</span>
+            <small> | Dt. Nascimento: {{customer.birthDate | date }}</small>
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
+    </div>
   <div *ngFor="let item of items" class="col-xl-3 col-md-6 mb-4">
     <p>{{item.title}}</p>
     <a href="https://www.youtube.com/watch?v={{item.id.videoId}}" target="_blank"></a>
