@@ -13,7 +13,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly string key = "";
+        private readonly string key = "AIzaSyCUGTE8Xf1XOH4ZH1qL7dSQ_iTd4Iq-YH8";
         private readonly string channel = "ASPWorldTour";
 
         [HttpGet]
