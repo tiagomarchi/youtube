@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

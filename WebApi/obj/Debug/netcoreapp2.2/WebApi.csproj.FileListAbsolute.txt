@@ -13,3 +13,4 @@ C:\Users\tiago\source\repos\tiagomarchi\youtube\WebApi\obj\Debug\netcoreapp2.2\W
 C:\Users\tiago\source\repos\tiagomarchi\youtube\WebApi\obj\Debug\netcoreapp2.2\WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\tiago\source\repos\tiagomarchi\youtube\WebApi\obj\Debug\netcoreapp2.2\WebApi.dll
 C:\Users\tiago\source\repos\tiagomarchi\youtube\WebApi\obj\Debug\netcoreapp2.2\WebApi.pdb
+C:\Users\tiago\Source\Repos\tiagomarchi\youtube\WebApi\obj\Debug\netcoreapp2.2\WebApi.csprojAssemblyReference.cache
