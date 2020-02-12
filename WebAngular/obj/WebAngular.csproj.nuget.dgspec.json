@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj": {}
+    "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj": {
+    "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj",
         "projectName": "WebAngular",
-        "projectPath": "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj",
+        "projectPath": "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebAngular\\WebAngular.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tiago\\Source\\Repos\\tiagomarchi\\youtube\\WebAngular\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\source\\repos\\tiagomarchi\\youtube\\WebAngular\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -13,8 +13,8 @@ namespace WebApi.Controllers
         private readonly string key = "";
         private readonly string channel = "ASPWorldTour";
 
-        [HttpGet]
-        public ActionResult Get()
+        [HttpGet("ContentChannels")]
+        public ActionResult GetContentChannels()
         {
             var youTubeService = new YouTubeService(new BaseClientService.Initializer()
             {
@@ -48,6 +48,13 @@ namespace WebApi.Controllers
             }
             return Ok(null);
         }
+        [HttpGet]
+        public ActionResult Get()
+        {
+
+            
+            return Ok(null);
+        }
 
 
         [HttpGet("search/{search}")]
@@ -74,17 +81,17 @@ namespace WebApi.Controllers
                 switch (searchResult.Id.Kind)
                 {
                     case "youtube#video":
-                        videos.Add( new {Type =  "video",Title = searchResult.Snippet.Title , Id = searchResult.Id.VideoId });
-                        all.Add( new {Type =  "video",Title = searchResult.Snippet.Title , Id = searchResult.Id.VideoId });
+                        videos.Add( new {Criado = searchResult.Snippet.PublishedAt, Tipo =  "video",Titulo = searchResult.Snippet.Title, Id = searchResult.Id.VideoId, Descricao = searchResult.Snippet.Description, Foto = searchResult.Snippet.Thumbnails.Medium.Url });
+                        all.Add( new { Criado = searchResult.Snippet.PublishedAt, Tipo =  "video",Titulo = searchResult.Snippet.Title , Id = searchResult.Id.VideoId, Descricao = searchResult.Snippet.Description, Foto = searchResult.Snippet.Thumbnails.Medium.Url });
                         break;
 
                     case "youtube#channel":
-                        channels.Add(new { Type = "canal", Title = searchResult.Snippet.Title, Id = searchResult.Id.ChannelId });
-                        all.Add(new { Type = "canal", Title = searchResult.Snippet.Title, Id = searchResult.Id.ChannelId });
+                        channels.Add(new { Criado = searchResult.Snippet.PublishedAt, Tipo = "canal", Titulo = searchResult.Snippet.Title, Id = searchResult.Id.ChannelId, Descricao = searchResult.Snippet.Description, Foto = searchResult.Snippet.Thumbnails.Medium.Url });
+                        all.Add(new { Criado = searchResult.Snippet.PublishedAt, Tipo = "canal", Titulo = searchResult.Snippet.Title, Id = searchResult.Id.ChannelId, Descricao = searchResult.Snippet.Description, Foto = searchResult.Snippet.Thumbnails.Medium.Url });
                         break;
                     case "youtube#playlist":
-                        playlists.Add(new { Type = "playlist", Title = searchResult.Snippet.Title, Id = searchResult.Id.PlaylistId });
-                        all.Add(new { Type = "playlist", Title = searchResult.Snippet.Title, Id = searchResult.Id.PlaylistId });
+                        playlists.Add(new { Criado = searchResult.Snippet.PublishedAt, Tipo = "playlist", Titulo = searchResult.Snippet.Title, Id = searchResult.Id.PlaylistId, Descricao = searchResult.Snippet.Description, Foto = searchResult.Snippet.Thumbnails.Medium.Url });
+                        all.Add(new { Criado = searchResult.Snippet.PublishedAt, Tipo = "playlist", Titulo = searchResult.Snippet.Title, Id = searchResult.Id.PlaylistId, Descricao = searchResult.Snippet.Description, Foto = searchResult.Snippet.Thumbnails.Medium.Url });
 
                         break;
                 }

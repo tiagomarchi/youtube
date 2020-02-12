@@ -8,22 +8,18 @@ const routes: Routes = [
   {
     path: 'search',
     component: YoutubeSearchComponent,
-    // canActivate: [ AuthGuardService ]
   },
   {
     path: 'videos',
-    component: YoutubeSearchComponent,
-    // canActivate: [ AuthGuardService ]
+    component: HomeComponent,
   },
   {
     path: 'home',
     component: HomeComponent,
-    // canActivate: [ AuthGuardService ]
   },
   {
     path: '**',
     redirectTo: 'home',
-    // canActivate: [ AuthGuardService ]
   }
 ];
 

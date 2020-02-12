@@ -1,1 +1,17 @@
-Pagina inicial
+ <div fxLayout="row warp" fxLayoutGap="5px"  >
+    <mat-card fxFlex="33" *ngFor="let item of videos">
+      <mat-card-header>
+        <mat-card-title>{{ item.titulo }}</mat-card-title>
+        <mat-card-subtitle>{{ item.criado | date }}</mat-card-subtitle>
+      </mat-card-header>
+      <a href="https://www.youtube.com/watch?v={{item.id}}" target="_blank">
+        <img matCardImage src="{{item.foto}}" width="70" > </a>
+
+      <mat-card-content> {{item.descricao}} </mat-card-content>
+      <mat-card-actions align="start">
+        <a mat-button color="primary" [href]="item.link">{{item.tipo}}</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  

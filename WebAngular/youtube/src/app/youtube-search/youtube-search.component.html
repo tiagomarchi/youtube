@@ -1,30 +1,50 @@
 <div class="flex-p">
-	<mat-card class="mat-elevation-z8">
+  <mat-card class="mat-elevation-z8">
     <mat-card-content>
-      <form [formGroup]='form' fxLayoutAlign="center center">
-      <div fxLayout="row warp" >
-        <mat-form-field fxFlex="100" appearance="fill" >
-            <input matInput placeholder="pesquise um titulo" [matAutocomplete]="youtube"
-              formControlName='search'>
-          </mat-form-field>
-          <mat-autocomplete #youtube="matAutocomplete" [displayWith]="displayItemFn">
-            <mat-option *ngIf="isLoading" class="is-loading">
-              <mat-spinner diameter="20"></mat-spinner>
+      <form [formGroup]='form' fxLayoutAlign="stretch stretch">
+        <mat-form-field fxFlex="100" appearance="fill">
+          <input matInput placeholder="pesquise um titulo" [matAutocomplete]="youtube" formControlName='search'>
+        </mat-form-field>
+        <mat-autocomplete #youtube="matAutocomplete">
+          <mat-option *ngIf="isLoading" class="is-loading">
+            <mat-spinner diameter="20"></mat-spinner>
+          </mat-option>
+          <ng-container *ngIf="!isLoading">
+            <mat-option *ngFor="let item of items" [value]="item.titulo" (click)="Add(item)">
+              <span>{{ item.titulo }}</span>
+              <small *ngIf="item.tytipope=='video'">
+                <mat-icon>video_library</mat-icon>
+              </small>
+              <small *ngIf="item.tipo=='canal'">
+                <mat-icon>tv</mat-icon>
+              </small>
+              <small *ngIf="item.tipo=='playlist'">
+                <mat-icon>playlist_add</mat-icon>
+              </small>
+
             </mat-option>
-            <ng-container *ngIf="!isLoading">
-              <mat-option *ngFor="let item of items" [value]="item">
-                <span>{{ item.name }}</span>
-                <small> | Dt. Nascimento: {{item.birthDate | date }}</small>
-              </mat-option>
-            </ng-container>
-          </mat-autocomplete>
-        </div>
-      <div *ngFor="let item of items" class="col-xl-3 col-md-6 mb-4">
-        <p>{{item.title}}</p>
-        <a href="https://www.youtube.com/watch?v={{item.id.videoId}}" target="_blank"></a>
-      </div>
+          </ng-container>
+        </mat-autocomplete>
+
+
       </form>
     </mat-card-content>
   </mat-card>
-</div>
 
+
+
+  <div fxLayout="row " fxLayoutGap="5px" class="align" *ngFor="let item of videos">
+    <mat-card fxFlex="calc(33% - 5px)">
+      <mat-card-header>
+        <mat-card-title>{{ item.titulo }}</mat-card-title>
+        <mat-card-subtitle>{{ item.criado | date }}</mat-card-subtitle>
+      </mat-card-header>
+      <a href="https://www.youtube.com/watch?v={{item.id}}" target="_blank">
+        <img matCardImage src="{{item.foto}}" width="150px" class="card-image"> </a>
+
+      <mat-card-content> {{item.descricao}} </mat-card-content>
+      <mat-card-actions align="start">
+        <a mat-button color="primary" [href]="item.link">{{item.tipo}}</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>

@@ -1,32 +1,24 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { YoutubeService } from '../services/youtube.service';
+import { Video } from '../youtube-search/youtube-search.component';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html' 
+  templateUrl: './home.component.html' ,
+  styleUrls : ['./home.component.scss']
 })
 export class HomeComponent {
   title = 'youtube';
-  customer : any;
   form: FormGroup;
-  items : Array<any> = new Array();
-  isLoading : boolean = false;
+  videos : Array<Video> = new Array();
 
-  constructor(private _youtubeService : YoutubeService,
-    private _formBuilder: FormBuilder){
+  constructor(private _youtubeService : YoutubeService){
 
-    this.form = this._formBuilder.group({
-      search:  ['', Validators.required],
-    })
-
-    this._youtubeService.getSearch('wsl').subscribe((response: any) => {
-      this.items = response;
-    });
+    this.videos = this._youtubeService.getVideosMock();
+    // this._youtubeService.get().subscribe((response: Video[]) => {
+    //   this.videos = response;
+    // });
 
   }
-  displayItemFn(customer: any) {
-    if (customer){ this.customer = customer; return customer.name; }
-  }
-
 }
